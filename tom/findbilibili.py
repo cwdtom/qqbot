@@ -74,7 +74,10 @@ class findbilibili(SGMLParser):                #分析HTML源代码
             self.num.append(data)
 
             
-
+#funtion name [bilibili]
+#在bilibili上抓取动画网址
+#param string 动画名字
+#return array[array] 2维数组 [1,[第一集][地址]][2,[][]][3...]...
 def bilibili(sname):
     name = sname
     name = unquote(name)
@@ -100,7 +103,6 @@ def bilibili(sname):
 
 
     url = 'http://www.bilibili.com/sp/'+m[0]
-    print url
     user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'       #伪装浏览器请求数据
     headers = { 'User-Agent' : user_agent }
     request = urllib2.Request(url, headers=headers)
@@ -165,7 +167,6 @@ def bilibili(sname):
     for a in range(n):
         dname.append(qname[n - a -1])
 
-    print dname[-1]
     return dname
 
 

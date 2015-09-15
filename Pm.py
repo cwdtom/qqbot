@@ -89,7 +89,7 @@ class Pm:
     def callout(self, msg):
         if "智障机器人" in msg.content:
             logging.info(str(self.tid) + " calling me out, trying to reply....")
-            self.reply("干嘛（‘·д·）")
+            self.reply("https://github.com/Yinzo?tab=activity")
             return True
         return False
 

@@ -9,7 +9,7 @@ from QQLogin import *
 from Configs import *
 from Msg import *
 from HttpClient import *
-from check import *
+from tom.check import *
 
 logging.basicConfig(
     filename='smartqq.log',
@@ -144,11 +144,12 @@ class Group:
         name = '小埋'.encode('gbk')
         if newcontent[0] == name and len(newcontent) == 1:
             logging.info(str(self.gid) + " calling me out, trying to reply....")
-            self.reply("是哪个hentai在叫我?")
+            self.reply("哪个hentai叫我！")
             return True
         elif newcontent[0] == name and len(newcontent) == 2:
             try:
                 say = checkinfo2(newcontent)
+                print say
                 self.reply(say)
             except ValueError:
                 pass

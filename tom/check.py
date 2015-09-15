@@ -10,7 +10,9 @@ def checkinfo2(content):
     content[1] = content[1].decode('gbk')
     key = content[1].encode('utf-8')
     if key == '节操':
-        return '这种东西早就没有了。'
+        return '这种东西早就没有了'
+
+
     result = animation(key)    #搜动漫
     return result
     
@@ -22,6 +24,7 @@ def checkinfo2(content):
 def animation(name):
     url = bilibili(name)
     try:
-        return '最后更新:第'+url[-1][0]+'集'+url[-1][1]
+        result = 'bilibili最后更新:第'+url[-1][0]+'集'+url[-1][1]
+        return result
     except IndexError:
         return '什么都找不到！'
